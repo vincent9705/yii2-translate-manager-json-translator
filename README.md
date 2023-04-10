@@ -8,9 +8,6 @@
 
 This project is based on the Google API PHP Client library, which is licensed under the Apache License 2.0. Please see the [LICENSE](https://github.com/googleapis/google-api-php-client/blob/master/LICENSE) file for details.
 
-_License_
-Apache 2.0
-
 This is a translator based on Google Sheets API and it supported Yii 2 Translate Manager exported JSON. It allows you to easily select a language to translate from and to, and then export a JSON file that can be directly imported into the Yii 2 language manager.
 
 ## Requirements
@@ -55,3 +52,5 @@ To use the translator, open your web browser and navigate to http://localhost:80
 The translated JSON file will be automatically generated and can be downloaded from the web interface.
 
 ## Example
+
+![Example 1](/readme-example/1.PNG)
