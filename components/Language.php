@@ -1,0 +1,95 @@
+<?php
+
+namespace app\components;
+
+use Yii;
+use yii\base\Component;
+
+class Language extends Component
+{
+    public static function languages()
+	{
+		$language = [
+            'af-ZA' => '(af-ZA) Afrikaans',
+            'ar-AR' => '(ar-AR) Arabic',
+            'az-AZ' => '(az-AZ) Azerbaijani',
+            'be-BY' => '(be-BY) Belarusian',
+            'bg-BG' => '(bg-BG) Bulgarian',
+            'bn-IN' => '(bn-IN) Bengali',
+            'bs-BA' => '(bs-BA) Bosnian',
+            'ca-ES' => '(ca-ES) Catalan',
+            'cs-CZ' => '(cs-CZ) Czech',
+            'cy-GB' => '(cy-GB) Welsh',
+            'da-DK' => '(da-DK) Danish',
+            'de-DE' => '(de-DE) German',
+            'el-GR' => '(el-GR) Greek',
+            'en-GB' => '(en-GB) English (UK)',
+            'en-PI' => '(en-PI) English (Pirate)',
+            'en-UD' => '(en-UD) English (Upside Down)',
+            'en-US' => '(en-US) English (US)',
+            'eo-EO' => '(eo-EO) Esperanto',
+            'es-ES' => '(es-ES) Spanish (Spain)',
+            'es-LA' => '(es-LA) Spanish',
+            'et-EE' => '(et-EE) Estonian',
+            'eu-ES' => '(eu-ES) Basque',
+            'fa-IR' => '(fa-IR) Persian',
+            'fb-LT' => '(fb-LT) Leet Speak',
+            'fi-FI' => '(fi-FI) Finnish',
+            'fo-FO' => '(fo-FO) Faroese',
+            'fr-CA' => '(fr-CA) French (Canada)',
+            'fr-FR' => '(fr-FR) French (France)',
+            'fy-NL' => '(fy-NL) Frisian',
+            'ga-IE' => '(ga-IE) Irish',
+            'gl-ES' => '(gl-ES) Galician',
+            'he-IL' => '(he-IL) Hebrew',
+            'hi-IN' => '(hi-IN) Hindi',
+            'hr-HR' => '(hr-HR) Croatian',
+            'hu-HU' => '(hu-HU) Hungarian',
+            'hy-AM' => '(hy-AM) Armenian',
+            'id-ID' => '(id-ID) Indonesian',
+            'is-IS' => '(is-IS) Icelandic',
+            'it-IT' => '(it-IT) Italian',
+            'ja-JP' => '(ja-JP) Japanese',
+            'ka-GE' => '(ka-GE) Georgian',
+            'km-KH' => '(km-KH) Khmer',
+            'ko-KR' => '(ko-KR) Korean',
+            'ku-TR' => '(ku-TR) Kurdish',
+            'la-VA' => '(la-VA) Latin',
+            'lt-LT' => '(lt-LT) Lithuanian',
+            'lv-LV' => '(lv-LV) Latvian',
+            'mk-MK' => '(mk-MK) Macedonian',
+            'ml-IN' => '(ml-IN) Malayalam',
+            'ms-MY' => '(ms-MY) Malay',
+            'nb-NO' => '(nb-NO) Norwegian (bokmal)',
+            'ne-NP' => '(ne-NP) Nepali',
+            'nl-NL' => '(nl-NL) Dutch',
+            'nn-NO' => '(nn-NO) Norwegian (nynorsk)',
+            'pa-IN' => '(pa-IN) Punjabi',
+            'pl-PL' => '(pl-PL) Polish',
+            'ps-AF' => '(ps-AF) Pashto',
+            'pt-BR' => '(pt-BR) Portuguese (Brazil)',
+            'pt-PT' => '(pt-PT) Portuguese (Portugal)',
+            'ro-RO' => '(ro-RO) Romanian',
+            'ru-RU' => '(ru-RU) Russian',
+            'sk-SK' => '(sk-SK) Slovak',
+            'sl-SI' => '(sl-SI) Slovenian',
+            'sq-AL' => '(sq-AL) Albanian',
+            'sr-RS' => '(sr-RS) Serbian',
+            'sv-SE' => '(sv-SE) Swedish',
+            'sw-KE' => '(sw-KE) Swahili',
+            'ta-IN' => '(ta-IN) Tamil',
+            'te-IN' => '(te-IN) Telugu',
+            'th-TH' => '(th-TH) Thai',
+            'tl-PH' => '(tl-PH) Filipino',
+            'tr-TR' => '(tr-TR) Turkish',
+            'uk-UA' => '(uk-UA) Ukrainian',
+            'vi-VN' => '(vi-VN) Vietnamese',
+            'xx-XX' => '(xx-XX) Developer',
+            'zh-CN' => '(zh-CN) Simplified Chinese (China)',
+            'zh-HK' => '(zh-HK) Traditional Chinese (Hong Kong)',
+            'zh-TW' => '(zh-TW) Traditional Chinese (Taiwan)'
+        ];
+
+        return $language;
+	}
+}
