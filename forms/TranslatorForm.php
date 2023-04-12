@@ -37,9 +37,10 @@ class TranslatorForm extends Model
 			throw new \Exception("Json file is required", 1);
 
         $language      = $this->language_to;
+		$to_language   = (!strpos($this->language_to, "zh")) ? substr($this->language_to, 0 , 2) : $this->language_to;
+		$from_language = (!strpos($this->language_from, "zh")) ? substr($this->language_from, 0 , 2) : $this->language_from;
         $source        = $arr['source'];
-        $translation   = $arr['translation'];
-        $translated    = [];
+		$new_translate = [];
 		$rows          = [];
 		$range         = "";
 		$row_count     = 0;
@@ -47,17 +48,12 @@ class TranslatorForm extends Model
 		$limit         = 200;
 		$this->sheetId = self::createNewSheet($client, $title);
 
-        foreach ($translation as $v) {
-            $translated[] = $v['id'];
-        }
 
 		foreach ($source as $v) {
 			$v           = (object) $v;
-			if (in_array($v->id, $translated))
-				continue;
 
 			$row_count += 1;
-			$rows[]    = [$v->id, '=GOOGLETRANSLATE("'.$v->message.'", "'.$this->language_from.'", "'.$language.'")'];
+			$rows[]    = [$v->id, '=GOOGLETRANSLATE("'.$v->message.'", "'.$from_language.'", "'.$to_language.'")'];
 		}
 
 		$pages = ceil($row_count / $limit);
@@ -74,10 +70,10 @@ class TranslatorForm extends Model
 			$words         = $this->result->valueRanges[0]['values'];
 
 			foreach ($words as $value) {
-				if (strpos(strtolower($value[1]), "#error!") !== false)
+				if (strpos(strtolower($value[1]), "#error!") !== false || strpos(strtolower($value[1]), "#value!") !== false)
 					continue;
 					
-				$translation[] = [
+				$new_translate[] = [
 					'id'          => (int) $value[0],
 					'language'    => $language,
 					'translation' => $value[1]
@@ -88,7 +84,7 @@ class TranslatorForm extends Model
 		$res = [
 			'languages'            => [],
 			'languageSources'      => $source,
-			'languageTranslations' => $translation
+			'languageTranslations' => $new_translate
 		];
 		$json_string = json_encode($res, JSON_UNESCAPED_UNICODE);
 
