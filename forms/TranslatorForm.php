@@ -8,7 +8,7 @@ use yii\base\Model;
 use yii\web\UploadedFile;
 use Google\Service\Sheets;
 use Google\Service\Sheets\ValueRange;
-use Google\Service\Sheets\SpreadSheet;
+use Google\Service\Sheets\Spreadsheet;
 use Google\Service\Sheets\BatchUpdateValuesRequest;
 
 class TranslatorForm extends Model
@@ -123,7 +123,7 @@ class TranslatorForm extends Model
 	{
 		$service = new Sheets($client);
         try{
-            $spreadsheet = new SpreadSheet([
+            $spreadsheet = new Spreadsheet([
 			'properties' => [
 				'title' => $title
 				]
